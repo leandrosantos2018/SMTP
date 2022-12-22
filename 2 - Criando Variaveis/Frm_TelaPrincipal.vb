@@ -29,6 +29,8 @@ Public Class Frm_TelaPrincipal
             mail.Subject = txtassunto.Text
             mail.Body = txtMSG.Text
             ' SmtpServer.UseDefaultCredentials = True
+
+
             SmtpServer.Send(mail)
             MsgBox("E-mail enviado com sucesso", MsgBoxStyle.Information, "Mensagem")
 
@@ -59,8 +61,21 @@ Public Class Frm_TelaPrincipal
             file = My.Computer.FileSystem.OpenTextFileWriter(".\Log.txt", True)
             file.WriteLine(ex.ToString)
             file.Close()
+            If txtUser.Text = "" Then
+                MsgBox("Favor informa usuario \n" + ex.ToString)
+            End If
 
-            MsgBox("Alguns Argumentos não foram passados \n" + ex.ToString)
+            If txtSenha.Text = "" Then
+
+
+                MsgBox("Favor informa a Senha \n" + ex.ToString)
+
+            End If
+
+
+        Catch ex As ArgumentNullException
+
+            MsgBox($"Argumento {ex} ")
 
         Catch ex As Exception
             Dim file As System.IO.StreamWriter

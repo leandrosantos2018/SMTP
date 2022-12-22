@@ -129,7 +129,7 @@ Partial Class Frm_TelaPrincipal
         '
         'txtEmailRem
         '
-        Me.txtEmailRem.Location = New System.Drawing.Point(92, 32)
+        Me.txtEmailRem.Location = New System.Drawing.Point(104, 32)
         Me.txtEmailRem.Name = "txtEmailRem"
         Me.txtEmailRem.Size = New System.Drawing.Size(196, 23)
         Me.txtEmailRem.TabIndex = 12
